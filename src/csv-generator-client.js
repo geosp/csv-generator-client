@@ -10,6 +10,8 @@ export const getInstance = function ({ separator = ',', addQuotes = false }) {
       row => row.join(separator),
       data => data.join('\r\n'),
       data => {
+        alert('Has window.navigator.msSaveOrOpenBlob' + !!window.navigator.msSaveOrOpenBlob)
+        alert('Has btoa' + (typeof btoa === 'function'))
         if (window.navigator.msSaveOrOpenBlob) {
           return data
         } else if (typeof btoa === 'function') {
