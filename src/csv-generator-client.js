@@ -36,6 +36,14 @@ export const getInstance = function ({ separator = ',', addQuotes = false }) {
   }
 
   this.download = (fileName, dataArray) => {
+    if (_.isNull(fileName)) {
+      throw 'A file name is required'
+    }
+
+    if (!_.isArray(dataArray)) {
+      throw 'An data array is required.'
+    }
+    
     if (window.navigator.msSaveBlob) {
       let blob = new Blob([decodeURIComponent(encodeURI(getData(dataArray)))], {
         type: 'text/csv;charset=utf-8;',
