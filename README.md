@@ -22,3 +22,6 @@ generator.download(fileName, data)
 ### download
 `instance.download(fileName, dataArray)` Where `fileName` is required and `dataArray` is required to be of type `Array`.
 
+
+# Credits
+This implementation is based on [csv-repository-client](https://github.com/AlexLibs/client-side-csv-generator) by [AlexLibs](https://github.com/AlexLibs)
