@@ -7,10 +7,9 @@ Component to generate downloadable csv files from client side data.
 This package requires `lodash/fp`, so make sure that's available in your app.
 
 # Usage
+```
+import * as CsvGenerator from 'csv-generator-client'
 
-`import * as CsvGenerator from 'csv-generator-client'`
-`let generator = CsvGenerator.getInstance()`
-`generator.download(fileName, data)`
-
-
-
+let generator = CsvGenerator.getInstance()
+generator.download(fileName, data)
+```
