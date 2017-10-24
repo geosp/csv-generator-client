@@ -1,10 +1,6 @@
 import _ from 'lodash/fp'
 
-export const helloWorld = () => { 
-  console.log('Hello')
-}
-
-export const CSVGeneratorClient = ({ data, fileName, separator = ',', addQuotes = false }) => {
+export const getInstance = ({ data, fileName, separator = ',', addQuotes = false }) => {
   if (addQuotes) {
     separator = `"${separator}"`
   }
