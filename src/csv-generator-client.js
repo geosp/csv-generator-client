@@ -12,14 +12,15 @@ export const getInstance = function ({ separator = ',', addQuotes = false }) {
       data => {
         alert('Has window.navigator.msSaveOrOpenBlob' + !!window.navigator.msSaveOrOpenBlob)
         alert('Has btoa' + (typeof btoa === 'function'))
-        if (window.navigator.msSaveOrOpenBlob) {
-          return data
-        } else if (typeof btoa === 'function') {
-          data = btoa(data)
-        } else {
-          data = encodeURIComponent(data)
-        }
-        return data
+        return btoa(data)
+        // if (window.navigator.msSaveOrOpenBlob) {
+        //   return data
+        // } else if (typeof btoa === 'function') {
+        //   data = btoa(data)
+        // } else {
+        //   data = encodeURIComponent(data)
+        // }
+        // return data
       }
     )
   )
