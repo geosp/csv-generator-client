@@ -1,6 +1,6 @@
 import _ from 'lodash/fp'
 
-export const getInstance = function ({ separator = ',', addQuotes = false } = {}) {
+export const getClientInstance = function ({ separator = ',', addQuotes = false } = {}) {
   if (addQuotes) {
     separator = `"${separator}"`
   }

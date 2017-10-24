@@ -1,8 +1,8 @@
-# csv-generator-client
+# csv-generator
 Library to generate downloadable csv files from client side data. 
 
 # Installing
-`npm install -save https://github.com/geosp/csv-generator-client.git`
+`npm install -save https://github.com/geosp/csv-generator.git`
 
 This package requires `lodash/fp`, so make sure that's available in your app.
 
@@ -13,7 +13,6 @@ import * as CsvGenerator from 'csv-generator-client'
 let generator = CsvGenerator.getInstance()
 generator.download(fileName, data)
 ```
-
 # API
 
 ### getInstance

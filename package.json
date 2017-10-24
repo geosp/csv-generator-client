@@ -1,5 +1,5 @@
 {
-  "name": "csv-generator-client",
+  "name": "csv-generator",
   "version": "1.0.0",
   "description": "Library to generate downloadable csv files from client side data.",
   "main": "lib/csv-generator-client.js",
@@ -26,7 +26,7 @@
     "csv",
     "download"
   ],
-  "author": "Geovanny F. Fajardo",
+  "author": "Geovanny F. Fajardo <gfajardo@smartprocure.us>",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/geosp/csv-generator-client/issues"
