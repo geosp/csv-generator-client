@@ -1,6 +1,6 @@
 import _ from 'lodash/fp'
 
-export let CSVGenerator = ({ data, fileName, separator = ',', addQuotes = false }) => {
+export default ({ data, fileName, separator = ',', addQuotes = false }) => {
   if (addQuotes) {
     separator = `"${separator}"`
   }
