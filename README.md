@@ -1,5 +1,5 @@
 # csv-generator-client
-Component to generate downloadable csv files from client side data. 
+Library to generate downloadable csv files from client side data. 
 
 # Installing
 `npm install -save https://github.com/geosp/csv-generator-client.git`
