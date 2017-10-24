@@ -1,6 +1,6 @@
 import _ from 'lodash/fp'
 
-export const getInstance = function ({ data, fileName, separator = ',', addQuotes = false }) {
+export const getInstance = function ({ separator = ',', addQuotes = false }) {
   if (addQuotes) {
     separator = `"${separator}"`
   }
@@ -22,29 +22,29 @@ export const getInstance = function ({ data, fileName, separator = ',', addQuote
     )
   )
 
-  let getDownloadLink = () => {
+  let getDownloadLink = (dataArray) => {
     let type = 'data:text/csv;charset=utf-8'
     if (typeof btoa === 'function') {
       type += ';base64'
     }
-    return type + ',' + getData(data)
+    return type + ',' + getData(dataArray)
   }
 
-  let getLinkElement = () => {
+  let getLinkElement = (fileName, dataArray) => {
     let linkElement = document.createElement('a')
-    linkElement.href = getDownloadLink()
+    linkElement.href = getDownloadLink(dataArray)
     linkElement.download = fileName
     return linkElement
   }
 
-  this.download = () => {
+  this.download = (fileName, dataArray) => {
     if (window.navigator.msSaveBlob) {
-      let blob = new Blob([decodeURIComponent(encodeURI(getData(data)))], {
+      let blob = new Blob([decodeURIComponent(encodeURI(getData(dataArray)))], {
         type: 'text/csv;charset=utf-8;',
       })
       window.navigator.msSaveBlob(blob, fileName)
     } else {
-      let linkElement = getLinkElement()
+      let linkElement = getLinkElement(fileName, dataArray)
       linkElement.style.display = 'none'
       document.body.appendChild(linkElement)
       linkElement.click()
