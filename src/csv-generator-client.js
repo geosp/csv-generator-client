@@ -27,7 +27,7 @@ export const getInstance = function ({ data, fileName, separator = ',', addQuote
     if (typeof btoa === 'function') {
       type += ';base64'
     }
-    return type + ',' + getData(dataArray)
+    return type + ',' + getData(data)
   }
 
   let getLinkElement = () => {
@@ -39,7 +39,7 @@ export const getInstance = function ({ data, fileName, separator = ',', addQuote
 
   this.download = () => {
     if (window.navigator.msSaveBlob) {
-      let blob = new Blob([decodeURIComponent(encodeURI(getData(dataArray)))], {
+      let blob = new Blob([decodeURIComponent(encodeURI(getData(data)))], {
         type: 'text/csv;charset=utf-8;',
       })
       window.navigator.msSaveBlob(blob, fileName)
