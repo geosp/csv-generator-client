@@ -6,23 +6,18 @@ export const getInstance = function ({ separator = ',', addQuotes = false }) {
   }
 
   let getData = _.flow(
-    _.map(
-      row => row.join(separator),
-      data => data.join('\r\n'),
-      data => {
-        alert('Has window.navigator.msSaveOrOpenBlob' + !!window.navigator.msSaveOrOpenBlob)
-        alert('Has btoa' + (typeof btoa === 'function'))
-        return btoa(data)
-        // if (window.navigator.msSaveOrOpenBlob) {
-        //   return data
-        // } else if (typeof btoa === 'function') {
-        //   data = btoa(data)
-        // } else {
-        //   data = encodeURIComponent(data)
-        // }
-        // return data
+    _.map(row => row.join(separator)),
+    data => data.join('\r\n'),
+    data => {
+      if (window.navigator.msSaveOrOpenBlob) {
+        return data
+      } else if (typeof btoa === 'function') {
+        data = btoa(data)
+      } else {
+        data = encodeURIComponent(data)
       }
-    )
+      return data
+    }
   )
 
   let getDownloadLink = (dataArray) => {
