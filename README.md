@@ -1,4 +1,6 @@
 # csv-generator
+
+[![Greenkeeper badge](https://badges.greenkeeper.io/geosp/csv-generator-client.svg)](https://greenkeeper.io/)
 Library to generate downloadable csv files from client side data. 
 
 # Installing
